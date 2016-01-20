@@ -79,10 +79,8 @@ $ git pull
 $ git add .
 $ git commit -m 'you commit message'
 $ git push
-$ hexo g -d
 ```
 
-执行后会想生成文章，然后自动更新到 [http://dxy-biz-developer.github.io/](http://dxy-biz-developer.github.io/) 上面，建议发布前先 `git push` 一下。
+其实就是普通的 git 提交，`git push` 后会自动发布到 [http://dxy-biz-developer.github.io/](http://dxy-biz-developer.github.io/)
 
-更多信息：
-- [Deployment](https://hexo.io/zh-cn/docs/deployment.html)
+注意：本地环境请勿要再执行 `hexo deploy`
