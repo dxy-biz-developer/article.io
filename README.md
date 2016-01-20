@@ -6,20 +6,20 @@
 **已经加入名单**
 
 - 招建武 - Github id: `nikejaycn`
+- 吕翔翔 - Github id: `xxlv`
+- 岳宗坤 - Github id: `yuezk`
+- 郑小静 - Github id: `JessieZheng2015`
+- 李芬 - Github id: `anchenlee`
+- 庞秀鉴 - Github id: `daxiuge`
+- 赵璐 - Github id: `1782457225`
 
 **未加入名单**
 
-- 郑小静 - Github id: `null`
-- 岳宗坤 - Github id: `null`
-- 李芬 - Github id: `null`
-- 赵璐 - Github id: `null`
 - 张磊 - Github id: `null`
 - 卢佳波 - Github id: `null`
 - 王经百 - Github id: `null`
 - 张明 - Github id: `null`
-- 吕翔翔 - Github id: `null`
 - 刘章 - Github id: `null`
-- 庞秀鉴 - Github id: `null`
 - 张样明 - Github id: `null`
 
 本 Blog 是基于 [Hexo](http://hexo.io/) 搭建，目前的访问链接是 [http://dxy-biz-developer.github.io/](http://dxy-biz-developer.github.io/).
@@ -33,7 +33,7 @@
 ``` bash
 $ git clone git@gitlab.dxy.net:biz-developer/dxy-biz-developer.github.io.git
 $ cd dxy-biz-developer.github.io
-$ npm install
+$ sudo npm install
 ```
 
 更多信息:
