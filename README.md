@@ -63,9 +63,22 @@ INFO  Created: ~/Dev/gitcafe/dxy-biz-developer.github.io/source/_posts/my-first-
 
 ### 本地预览
 
+``` bash
+$ hexo server
+```
+
+默认预览链接是 `http://0.0.0.0:4000/`
+
+更多信息：
+[预览](https://hexo.io/zh-cn/docs/server.html)
+
 ### 发布文章
 
 ``` bash
+$ git pull
+$ git add .
+$ git commit -m 'you commit message'
+$ git push
 $ hexo g -d
 ```
 
