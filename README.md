@@ -11,7 +11,7 @@
 ### 初始化项目
 
 ``` bash
-$ git clone git@gitlab.dxy.net:biz-developer/dxy-biz-developer.github.io.git
+$ git clone git@github.com:dxy-biz-developer/article.io.git
 $ cd dxy-biz-developer.github.io
 $ sudo npm install
 ```
