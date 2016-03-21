@@ -26,7 +26,6 @@ __缘由：团队的同学都集体切换到 Mac 系统下进行开发，特此�
 - 跨平台（Windows、Linux 和 Mac OS X）。
 - 兼容 TextMate 的语言标记语法。
 
-
 ## Package Control Enabled
 
 得益于 [Sublime Text](https://www.sublimetext.com/) 强大的包（Package）管理系统，可以借此实现很多功能，但是默认是不开启的，需要手工开启。
@@ -108,7 +107,6 @@ PS：除了直接启动 Sublime Text 之外，还支持目录或者文件参数�
 	"update_check": false
 }
 ```
-
 
 **参考来源**:
 - Sublime Text：[http://www.sublimetext.com/](http://www.sublimetext.com/)

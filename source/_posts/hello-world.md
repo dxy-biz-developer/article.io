@@ -3,7 +3,7 @@ date: 2016-01-20 10:44:13
 ---
 Hey, This's our team blog!
 
-this page for github! -> 2 -> 3
+this page for github! -> 2 -> 3 -> 4
 
 Welcome to [Hexo](http://hexo.io/)! This is your very first post. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
