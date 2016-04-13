@@ -32,6 +32,10 @@ tags:
 	```js
 	var isIE=!!window.ActiveXObject; 
 	var isIE8=isIE&&!!document.documentMode;
+	//使用
+	if(isIE8){
+		//do something
+	}
     ```
 ## <a name="IE8修复placeholder"></a>2.IE8修复placeholder
 	```js
@@ -69,18 +73,19 @@ tags:
         });
     }
 	};
-	//执行
-		jQuery(function(){
+	//使用
     	JPlaceHolder.init();    
-	});
 	```
 ## <a name="IE8 box-shadow兼容"></a>3.IE8 box-shadow兼容
 	```js
-	//如果IE8，则添加shaded class
 	.shaded { 
 	    background-color: #fff;
 	    zoom: 1; 
 	    filter: progid:DXImageTransform.Microsoft.Shadow(color='#aaaaaa', Direction=135, Strength=6);
+	}
+	//使用
+	if(isIE8){
+		$('选择器').addClass('shaded');
 	}	
 	```
 ## <a name="IE8 rgba兼容"></a>4.IE8 rgba兼容
@@ -89,20 +94,21 @@ tags:
 	//参阅 #RRGGBB 颜色单位。 AA 指定透明度。 00 是完全透明。 FF 是完全不透明。超出取值范围的值将被恢复为默认值。
 	
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+	//使用，直接在css里面加入就好
 	```
 ## <a name="分享组件使用"></a>5.分享组件使用
 
 	```js
 	
 	var share = require('./dxy_share.js');
-	
+	//使用
 	var shareContainer = $('放置容器'); //给一个放置容器，其他事情控件会帮你完成
 	    if (shareContainer.length) {
 	        shareContainer.attr('id','to-share');
 	        new share().show({
 	            id: 'to-share',
-	            lst: ['weixin', 'sina', 'tt', 'qzone', 'douban'],
-	            style: 3
+	            lst: ['weixin', 'sina', 'tt', 'qzone', 'douban'], //需要分享到的社区列表
+	            style: 3    //有许多不同的样式可以选择
 	        });
 	}
     //sina: '新浪微博',
@@ -165,6 +171,9 @@ tags:
             this.blur();
             
         });	
+        
+        //HTML内容
+        <input text="text" id="location" />
 	```
 ## <a name="医院选择控件"></a>7.医院选择控件
 	```js
@@ -207,7 +216,11 @@ tags:
         $('#hospital-box').on('click', function(e){
             cascadeHospitalMobile.open();
             this.blur();
-        });    
+        });
+        
+        //HTML内容
+        
+        <input text="text" id="hospital-box" />    
 	```
 
 ## <a name="科室选择控件"></a>8.科室选择控件
@@ -250,6 +263,10 @@ tags:
             cascadeLocationMobile.open();
             this.blur();
         });
+        
+                
+        //HTML内容
+        <input text="text" id="department-box" />
 	```
 ## <a name="职称选择控件"></a>9.职称选择控件
 	```js
@@ -290,11 +307,19 @@ tags:
             cascadeTitle.open();
             this.blur();
         });
+        
+                
+        //HTML内容
+        <input text="text" class="job-input" />
 	```
 
 ## <a name="判断是否移动端"></a>10.判断是否移动端
 	```js
 		var isMobile = /mobile|dxyapp/i.test(window.navigator.userAgent);
+		//使用
+		if(isMobile){
+			//do someting
+		}
 	```
 ## <a name="获取内页文章ID"></a>11.获取内页文章ID
 	```js
@@ -302,6 +327,8 @@ tags:
     	var match = $('body').attr('class').match(/page-node-(\d+)/);
     	return match ? match[1] : -1;
 	};
+	//使用
+	var getId = getContentId();
 	```
 ## <a name="validate插件扩展"></a>12.validate插件扩展
 	```js
@@ -371,7 +398,7 @@ tags:
 	```
 ## <a name="validate插件使用"></a>13.validate插件使用
 	```js
-	var caseForm = $('表单');
+	var caseForm = $('表单'); //获取表单元素
 	if(!caseForm.length) {
             return;
     }
@@ -455,6 +482,19 @@ tags:
     	$(this).addClass('active').siblings().removeClass('active');
     	$('.tab .content').eq($(this).index()).show().siblings().hide();
 	}).eq(0).click();
+	
+	//HTML
+	
+	<div class="tab">
+		<div class="title">title-1</div>
+		<div class="title">title-2</div>
+		<div class="title">title-3</div>
+		<div class="container">
+			<div class="content">content-1</div>
+			<div class="content">content-2</div>
+			<div class="content">content-3</div>
+		</div>
+	</div>
 	```
 ## <a name="新窗口打开页面"></a>16.	新窗口打开页面
 	```js
@@ -473,7 +513,7 @@ tags:
 	}
 	//使用
 	 $(#goTop).click(function(){
-	  $(body).scrollTo(500);
+	  $(body).scrollTo(500); //返回顶部
 	})
 	```
 ## <a name="对话框控件使用"></a>18.对话框控件使用
@@ -492,14 +532,14 @@ tags:
 ##	<a name="移动端PPT使用"></a>19.移动端PPT使用
 
 	```js
-	var flash = $('.放置容器 iframe, .放置容器 object');
+	var flash = $('.放置容器 iframe, .放置容器 object');  //获取PPT元素
 	if (isMobile && flash.length) {
 	    var js = 'http://assets.dxycdn.com/templates/core/third-party/mobile-ppt/mobile-ppt.min.js';
 	    $.getScript(js, function () {
 	        MobilePPT.init('biz', {
 	            flash: flash,
 	            dataUrlBuilder: function (nid) {
-	                return 'http://www.dxy.cn/topic/biz/ppt地址/' + nid + '/ps-data.js';
+	                return 'http://www.dxy.cn/topic/biz/ppt地址/' + nid + '/ps-data.js';  //有一个用node.js写的转换工具，需要向编辑人员要取PPT里面的所有图片，通过转换工具转换后将转换后的内容上传到FTP上，然后地址填写在这里即可
 	            }
 	        });
 	    });
