@@ -24,6 +24,7 @@ tags:
 17. *[滚动到指定位置滑动动画](#滚动到指定位置滑动动画)*
 18. *[对话框控件使用](#对话框控件使用)*
 19. *[移动端PPT使用](#移动端PPT使用)*
+20. *[即将离开丁香园提示框](#即将离开丁香园提示框)*
 
 
 
@@ -544,4 +545,102 @@ tags:
 	        });
 	    });
 	}
+	```
+## <a name="即将离开丁香园提示框"></a>20.即将离开丁香园提示框
+	```js
+	//css
+	.page-go-cmeflist .mask{ 
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: #000;filter:alpha(opacity=50); opacity: .6; z-index: 233333;
+	 }
+	.link__panel{
+	    width: 400px;
+	    height: auto;
+	    background: #fff;
+	    border-radius: 5px;
+	    box-shadow: 0 0 0 #555;
+	    border: 1px solid #999;
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    margin-left: -200px;
+	    z-index: 2333333;
+	    margin-top: -100px;
+	}
+	.link__panel .close{
+	    position: absolute;
+	    width: 40px;
+	    height: 40px;
+	    top: 0;
+	    right: 5px;
+	    background: url(../img/icon-close.png?t=20160126) no-repeat center center;
+	    cursor: pointer;
+	}
+	.link__panel_header{
+	    height: 40px;
+	    border-bottom: 1px solid #ddd;
+	    padding: 0 15px;
+	    line-height: 40px;
+	    font-size: 14px;
+	    color: #666;
+	}
+	
+	.link__panel_body{
+	    height: auto;
+	    border-bottom: 1px solid #ddd;
+	    padding: 15px;
+	    line-height: 1.8;
+	    font-size: 14px;
+	    color: #666;
+	}
+	.link__panel_body a{
+	    color: #4299D8;
+	    display: block;
+	}
+	.link__panel_footer{
+	    font-size: 14px;
+	    text-align: right;
+	    padding: 15px;
+	}
+	.link__panel_footer .btn{
+	    padding: 3px 10px;
+	    border: 1px solid #ddd;
+	    display: inline-block;
+	    vertical-align: top;
+	    font-weight: 500;
+	    border-radius: 3px;
+	    margin-right: 10px;
+	}
+	.link__panel_footer .btn-goon{
+	    background: #4299D8;
+	    color: #fff;
+	}
+	.link__panel_footer .btn-close{
+	    background: #eee;
+	    color: #666;
+	}
+	// js
+    $('a标签的父级元素').on('click', 'a', function(event) {
+        event.preventDefault();
+        var link = $(this).attr('href'),
+            text = $(this).html();
+        $('body').append('<div class="mask"></div>'+
+            '<div class="link__panel">'+
+                '<div class="close"></div>'+
+                '<div class="link__panel_header">提示：</div>'+
+                '<div class="link__panel_body">你将离开丁香园，进入其他页面:<br> <a href="'+ link +'">'+ link +'</a></div>'+
+                '<div class="link__panel_footer">'+
+                    '<a href="'+ link +'" class="btn  btn-goon">继续访问</a>'+
+                    '<a href="" class="btn  btn-close">关闭</a>'+
+                '</div>'+
+            '</div>');
+        $('.link__panel .close, .link__panel .btn-close').on('click', function(event) {
+            event.preventDefault();
+            $('.mask, .link__panel').remove();
+        });
+    });
 	```
