@@ -23,6 +23,7 @@ tags:
 16. *[新窗口打开页面](#新窗口打开页面)*
 17. *[滚动到指定位置滑动动画](#滚动到指定位置滑动动画)*
 18. *[对话框控件使用](#对话框控件使用)*
+19. *[移动端PPT使用](#移动端PPT使用)*
 
 
 
@@ -487,4 +488,20 @@ tags:
 	```
 
 现在已经被范同学优化,详细请见[dxy-dialog](https://github.com/dxy-biz-developer/dxy-dialog)	
-	
+
+##	<a name="移动端PPT使用"></a>19.移动端PPT使用
+
+	```js
+	var flash = $('.放置容器 iframe, .放置容器 object');
+	if (isMobile && flash.length) {
+	    var js = 'http://assets.dxycdn.com/templates/core/third-party/mobile-ppt/mobile-ppt.min.js';
+	    $.getScript(js, function () {
+	        MobilePPT.init('biz', {
+	            flash: flash,
+	            dataUrlBuilder: function (nid) {
+	                return 'http://www.dxy.cn/topic/biz/ppt地址/' + nid + '/ps-data.js';
+	            }
+	        });
+	    });
+	}
+	```
