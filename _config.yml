@@ -62,6 +62,15 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+
 ## Themes: http://hexo.io/themes/
 theme: maupassant
 
