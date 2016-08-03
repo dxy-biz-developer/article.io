@@ -768,6 +768,7 @@ jQuery.fn.scrollTo = function(speed){
 ```
 
 ## <a name="滚动条插件"></a>21.滚动条插件
+
 ```js
 
 var IScroll   = require('./lib/iscroll.js');
@@ -799,4 +800,4 @@ dxy_wechat_share({
   imgUrl:'这是一个分享图片地址'
 });
     
-```    
+``` 
