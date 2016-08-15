@@ -6,7 +6,7 @@ tags:Chrome开发者工具 Network Timeline
 
 #Chrome 程序性能分析
 
-对于一次组内分享的整理，PPT资源放在了我的个人github pages上[点击这里查看](http://zanseven007.github.io/chrome-performance)
+对于一次组内分享的整理，PPT资源放在了我的个人github pages上[点击这里查看](http://zanseven007.github.io/chrome-performance)（建议Timeline的时候使用隐身模式避免插件影响，快捷键command+shift+n）
 ##Network
 
 Network主要有5个视窗，分别有不同的功能：
