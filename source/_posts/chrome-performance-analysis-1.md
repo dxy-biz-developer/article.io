@@ -1,13 +1,13 @@
-title: Chrome程序性能分析
-date: 2016-08-14 16:01:24
-tags:Chrome开发者工具 Network Timeline
+title: Chrome程序性能分析-来自于一次组内分享
+date: 2016-08-15 09:59:44
+tags:
 ---
-
-
-#Chrome 程序性能分析
-
 对于一次组内分享的整理，PPT资源放在了我的个人github pages上[点击这里查看](http://zanseven007.github.io/chrome-performance)（建议Timeline的时候使用隐身模式避免插件影响，快捷键command+shift+n）
-##Network
+
+
+# Chrome 程序性能分析
+
+## Network
 
 Network主要有5个视窗，分别有不同的功能：
 
@@ -40,7 +40,7 @@ Network主要有5个视窗，分别有不同的功能：
 
 按住Shift查看资源请求上下游
 其中绿色请求表示common.js的上游请求，即谁触发了V20160804a.js请求，红色请求表示common.js的下游请求，即common.js又触发了什么请求。
-![上下游](http://upload-images.jianshu.io/upload_images/1158202-038dbaa07c55b3d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650)
+![上下游](http://obw56kbo5.bkt.clouddn.com/pic.png)
 
 Timeline可以重新排序，主要有如下几个维度。
 
@@ -89,9 +89,26 @@ Timeline的四个视图窗
 
 ### 优化方法
 
-* requestAnimationFrame (*跟着浏览器的绘制走，如果浏览设备绘制间隔是16.7ms，那我就这个间隔绘制；如果浏览设备绘制间隔是10ms，我就10ms绘制*)
-* Web Workers (*在后台单独起一个线程来执行JS，不占用浏览器主线程，可以针对耗时且不操作dom的JS文件*)
-* 使用flexbox代替传统布局 (*同样对1300个元素的布局，传统DIV布局13.7ms，flexbox仅需3.4ms*)
-* 避免强制同步布局(*优化插件：fastdom*)
-* 提升动画效果中的元素(*耗电*)
+#### ___requestAnimationFrame___
 
+ *跟着浏览器的绘制走，如果浏览设备绘制间隔是16.7ms，那我就这个间隔绘制；如果浏览设备绘制间隔是10ms，我就10ms绘制*
+
+ ---
+
+#### ___Web Workers___
+ *在后台单独起一个线程来执行JS，不占用浏览器主线程，可以针对耗时且不操作dom的JS文件*
+
+ ---
+
+#### ___使用flexbox代替传统布局___ 
+ *同样对1300个元素的布局，传统DIV布局13.7ms，flexbox仅需3.4ms*
+
+ ---
+
+#### ___避免强制同步布局___
+*优化插件：fastdom*
+
+ ---
+
+#### ___提升动画效果中的元素___
+*耗电*
