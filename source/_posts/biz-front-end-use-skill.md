@@ -26,7 +26,8 @@ tags:
 19. *[移动端PPT使用](#移动端PPT使用)*
 20. *[即将离开丁香园提示框](#即将离开丁香园提示框)*
 21. *[滚动条插件](#滚动条插件)*
-21. *[微信分享](#微信分享)*
+22. *[微信分享](#微信分享)*
+23. *[移动端多行显示省略号](#移动端多行显示省略号)*
 
 
 
@@ -662,6 +663,7 @@ jQuery.fn.scrollTo = function(speed){
     
 ```
 ## <a name="即将离开丁香园提示框"></a>20.即将离开丁香园提示框
+
 ```css
     
     //css
@@ -766,12 +768,11 @@ jQuery.fn.scrollTo = function(speed){
     });
     
 ```
-
-## <a name="滚动条插件"></a>21.滚动条插件
+##  <a name="滚动条插件"></a>21.滚动条插件
 
 ```js
+  var IScroll  = require('./lib/iscroll.js');
 
-var IScroll   = require('./lib/iscroll.js');
     function initActivityIntro() {
 
       var el = $('.process__pic');
@@ -783,14 +784,12 @@ var IScroll   = require('./lib/iscroll.js');
         });
         }
       }
-initActivityIntro();
+  initActivityIntro();
     
-```    
-
-## <a name="微信分享"></a>22.微信分享
+```
+##  <a name="微信分享"></a>22.微信分享
 
 ```js
-
 var dxy_wechat_share = require('dxy-wechat-share');
 
 window.wx_share = 'callback(具体地址看项目)';
@@ -799,5 +798,21 @@ dxy_wechat_share({
   desc:'这是一个摘要第一行\n这是一个摘要第二行',
   imgUrl:'这是一个分享图片地址'
 });
+
     
-``` 
+```
+
+##  <a name="移动端多行显示省略号"></a>23.移动端多行显示省略号
+
+`display: -webkit-box;` 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+`-webkit-box-orient` 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
+`text-overflow: ellipsis;`，可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 
+
+```css
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+    
+```
